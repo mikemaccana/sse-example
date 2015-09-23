@@ -23,7 +23,7 @@ router.get('/time', function(req, res) {
 
 	// Sends a SSE message every second
 	setInterval(function() {
-		sse(res, 'hey girl', {
+		sse(res, 'message', {
 			message: 'yaay'
 		});
 	}, 1000);
