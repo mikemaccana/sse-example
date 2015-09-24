@@ -14,12 +14,18 @@ router.get('/time', function(req, res) {
 		'Cache-Control': 'no-cache',
 		'Connection': 'keep-alive'
 	});
+
 	res.write('\n');
 
 	function sse(res,name,data) {
 		res.write('event: ' + name + '\n');
 		res.write('data: ' + JSON.stringify(data) + '\n\n');
+		// Needed to cork wit hnpm 'cmpression'
+		// See 	// https://github.com/expressjs/compression/issues/17
+
+		res.flush()
 	}
+
 
 	// Sends a SSE message every second
 	setInterval(function() {

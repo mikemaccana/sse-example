@@ -13,8 +13,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-// UNCOMMENT ME FOR BROKENNESS
-// app.use(compress)
+app.use(compress)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
