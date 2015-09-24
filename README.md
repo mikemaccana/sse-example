@@ -1,8 +1,10 @@
 # Compression breaks SSE!
 
+Run:
+
 	./bin/www
 
-Visit:
+Open a browser and visit:
 
 	http://localhost:3000/
 
